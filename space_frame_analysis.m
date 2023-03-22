@@ -30,7 +30,7 @@ for i = 1:n_members
     node_2 =connectivity(i, 2);  %Second Node Index
     c1 = node_coords(node_1, :); %First  Node Coordinates
     c2 = node_coords(node_2, :); %Second Node Coordinates
-
+    disp("member number:"+ num2str(i))
     % Calculate member vector
     V = (c2 - c1);
 
@@ -40,7 +40,7 @@ for i = 1:n_members
     roi = [(node_1-1)*6+1:node_1*6, (node_2-1)*6+1:node_2*6] ; %Region Of Interest in global matrices
 
     % Assembly of global stiffness matrix
-    K_global(roi,roi) = K_global(roi,roi)+ K_member;
+        K_global(roi,roi) = K_global(roi,roi)+ K_member;
    
 end
 
