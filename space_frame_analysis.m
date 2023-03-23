@@ -1,5 +1,5 @@
 %% space_frame_analysis.m
-function [U_global, stress, strain] = space_frame_analysis(nodes, members)
+function [U_global] = space_frame_analysis(nodes, members)
     %Decompose Input
     node_coords = nodes(:,1:3);
     node_constraints = reshape(nodes(:,4:9)',[],1);
@@ -61,10 +61,11 @@ K_global(DOF_indexes,DOF_indexes)
 U_global(DOF_indexes) = K_global(DOF_indexes,DOF_indexes) \ node_loads(DOF_indexes);
 
 %% Calculate stress and strain in each member
-stress = zeros(n_members, 1);
-strain = zeros(n_members, 1);
+%% Not Verified To be Implemented later
+% stress = zeros(n_members, 1);
+% strain = zeros(n_members, 1);
+% 
 
-% Not Verified
 % for i = 1:n_members
 %     % Get node coordinates for the current member
 %     n1 = node_coords(connectivity(i, 1), :);
