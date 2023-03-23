@@ -9,8 +9,8 @@ Description
 The code is divided into four files, which perform the following functions:
 
 1.  `StructureData.m`: Contains input data for a space truss structure (node coordinates, constraints, external loads, member properties).
-2.  `ExtendedDirectStiffnessSpaceFrame.m`: Main script that loads structure data, performs the space frame analysis, and displays the results (displacement, reactions, internal forces, stress, and strain).
-3.  `SpaceFrameAnalysis.m`: Function that implements the Direct Stiffness Method for a space frame and returns the displacement, reactions, internal forces, stress, and strain.
+2.  `DirectStiffnessSpaceFrame.m`: Main script that loads structure data, performs the space frame analysis, and displays the results (displacement, reactions, internal forces, stress, and strain).
+3.  `space_frame_analysis.m`: Function that implements the Direct Stiffness Method for a space frame and returns the displacement, reactions, internal forces, stress, and strain.
 4.  `space_frame_member_stiffness.m`: Function that calculates the member stiffness matrix.
 
 Installation
