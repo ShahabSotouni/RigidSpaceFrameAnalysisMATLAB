@@ -1,4 +1,4 @@
-
+%% space_frame_analysis.m
 function [U_global, stress, strain] = space_frame_analysis(nodes, members)
     %Decompose Input
     node_coords = nodes(:,1:3);
