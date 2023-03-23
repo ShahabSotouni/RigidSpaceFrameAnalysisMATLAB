@@ -1,5 +1,3 @@
-   Space Truss Analysis using Direct Stiffness Method
-
 Space Truss Analysis using Direct Stiffness Method
 ==================================================
 
