@@ -30,12 +30,12 @@ for i = 1:n_members
     node_2 =connectivity(i, 2);  %Second Node Index
     c1 = node_coords(node_1, :); %First  Node Coordinates
     c2 = node_coords(node_2, :); %Second Node Coordinates
-    disp("member number:"+ num2str(i))
+%     disp("member number:"+ num2str(i))
     % Calculate member vector
     V = (c2 - c1);
 
     % Calculate member stiffness matrix
-    K_member = space_frame_member_stiffness(A(i), E(i), V, G(i), J(i), Iy(i), Iz(i), phi_x(i))
+    K_member = space_frame_member_stiffness(A(i), E(i), V, G(i), J(i), Iy(i), Iz(i), phi_x(i));
 
     roi = [(node_1-1)*6+1:node_1*6, (node_2-1)*6+1:node_2*6] ; %Region Of Interest in global matrices
 
@@ -57,7 +57,7 @@ DOF_indexes = find(DOF);
 %% Solve for displacements
 
 U_global = zeros(6 * n_nodes,1);
-K_global(DOF_indexes,DOF_indexes)
+% K_global(DOF_indexes,DOF_indexes);
 U_global(DOF_indexes) = K_global(DOF_indexes,DOF_indexes) \ node_loads(DOF_indexes);
 
 %% Calculate stress and strain in each member

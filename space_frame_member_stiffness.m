@@ -1,8 +1,8 @@
 function K_global = space_frame_member_stiffness(A, E, V, G, J, Iy, Iz, phi_x)
-    % Calculate Lenght
+    % Calculate Length
     L = norm(V);
     if L <1e-6
-        error('Memeber size is zero')
+        error('Memeber length is close to zero')
     end
 
     % Calculate member stiffness matrix in local coordinates
@@ -25,7 +25,7 @@ function K_global = space_frame_member_stiffness(A, E, V, G, J, Iy, Iz, phi_x)
     K_local([1,  7], [1,  7]) = K_local_axial;
     K_local([4, 10], [4, 10]) = K_local_torsion;
     K_local([3,  5, 9, 11], [3,  5, 9, 11]) = K_local_bending_y;
-    K_local([2,  6, 8, 12], [2,  6, 8, 12]) = K_local_bending_z
+    K_local([2,  6, 8, 12], [2,  6, 8, 12]) = K_local_bending_z;
 
 
 
@@ -45,8 +45,6 @@ function K_global = space_frame_member_stiffness(A, E, V, G, J, Iy, Iz, phi_x)
     T(4:6, 4:6) = rho;
     T(7:9, 7:9) = rho;
     T(10:12, 10:12) = rho;
-
-    T 
     % Transform local stiffness matrix to global coordinates
     K_global = T' * K_local * T;
 end
